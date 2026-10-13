@@ -32,9 +32,14 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
+
+# raw source materials (flyers, photos) — reference only, not used by the
+# build; public/images/ holds the processed versions the site actually uses
+/brand-assets
 
 # typescript
 *.tsbuildinfo

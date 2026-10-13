@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
+/*
+ * Astha Shakti design tokens.
+ * Palette: deep navy (trust, institutional) + warm saffron (warmth, CTAs).
+ * Each token is redefined for dark mode below.
+ */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --surface-muted: #f6f8fc;
+  --foreground: #16213e;
+  --muted-foreground: #4b5568;
+  --border: #e2e8f0;
+
+  --color-primary: #15348a;
+  --color-primary-hover: #0f2769;
+  --color-primary-foreground: #ffffff;
+
+  --color-accent: #f0a830;
+  --color-accent-hover: #d8921c;
+  --color-accent-foreground: #1a1300;
+
+  --focus-ring: #2e7fe0;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface-muted: var(--surface-muted);
   --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-foreground: var(--color-primary-foreground);
+
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-accent-foreground: var(--color-accent-foreground);
+
+  --color-focus-ring: var(--focus-ring);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0b1220;
+    --surface-muted: #111a2e;
+    --foreground: #eaf0fb;
+    --muted-foreground: #9aa8c7;
+    --border: #22304d;
+
+    --color-primary: #5784e3;
+    --color-primary-hover: #799de8;
+    --color-primary-foreground: #0b1220;
+
+    --color-accent: #f3b753;
+    --color-accent-hover: #f6c674;
+    --color-accent-foreground: #1a1300;
+
+    --focus-ring: #7fb0ff;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Visible focus states everywhere, keyboard-only by default via :focus-visible */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
